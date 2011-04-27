@@ -72,7 +72,7 @@
   "Regexes of files to be excluded from `textmate-goto-file'.")
 
 (defvar *textmate-gf-exclude*
-  (let ((patterns (concat *textmate-gf-exclude-patterns* "|")))
+  (let ((patterns (mapconcat 'identity *textmate-gf-exclude-patterns* "|")))
     (format "(/|^)(\\.+[^/]+|vendor|fixtures|tmp|log|classes|build)($|/)|(%s)(/|$)" patterns))
   "Regexp of files to exclude from `textmate-goto-file'.")
 
